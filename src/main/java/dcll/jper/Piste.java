@@ -11,11 +11,16 @@ public class Piste
 {
     private Quille[] jeu;
     private Random rand;
+    private boolean strike;
+    private boolean spare;
 
     public Piste()
     {
         jeu = new Quille[10];
         rand = new Random();
+        strike = false;
+        spare = false;
+
     }
 
     private void reset()
@@ -45,12 +50,50 @@ public class Piste
         {
             jeu[i].setFallen(rand.nextBoolean());
         }
+
+        if(score() == 10)
+        {
+            strike = true;
+        }
+
+    }
+
+    private void lancer2()
+    {
+        for(int i =0; i < 10; i++)
+        {
+            if(!jeu[i].isFallen())
+                jeu[i].setFallen(rand.nextBoolean());
+        }
+
+        if(score() == 10)
+        {
+            spare = true;
+        }
+    }
+
+    public boolean isStrike() {
+        return strike;
+    }
+
+    public void setStrike(boolean strike) {
+        this.strike = strike;
+    }
+
+    public boolean isSpare() {
+        return spare;
+    }
+
+    public void setSpare(boolean spare) {
+        this.spare = spare;
     }
 
     public int jouer()
     {
         reset();
         lancer();
+        if(strike == false)
+            lancer2();
         return score();
     }
 
