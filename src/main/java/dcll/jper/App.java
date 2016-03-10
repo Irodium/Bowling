@@ -14,6 +14,22 @@ public class App
         System.out.println("Vous avez saisi : " + str);
 
 
+        Analyse analyzer = new Analyse();
+
+        String finale = new String();
+
+        analyzer.test(str);
+
+        if (analyzer.bool)
+            finale = "correcte";
+        else
+            finale = "incorrecte";
+
+        System.out.println("Votres chaine est "+ finale);
+
+        System.out.println(analyzer.tab.toString());
+        System.out.println(analyzer.tab.size());
+
 
     }
 }
