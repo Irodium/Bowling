@@ -61,6 +61,17 @@ public class Analyse
         }
     }
 
+    public int score()
+    {
+        int res = 0;
+
+        for(int i =0; i < tab.size(); i++)
+        {
+
+        }
+
+        return res;
+    }
 
 }
 
