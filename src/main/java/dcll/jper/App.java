@@ -1,13 +1,18 @@
 package dcll.jper;
 
-/**
- * Hello world!
- *
- */
+
+import dcll.jper.Joueur;
+import dcll.jper.Piste;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World !" );
+        Joueur j = new Joueur();
+        Piste p = new Piste();
+
+        j.jouer(p);
+        System.out.println(j.compter());
+
     }
 }
