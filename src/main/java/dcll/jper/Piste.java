@@ -17,6 +17,10 @@ public class Piste
     public Piste()
     {
         jeu = new Quille[10];
+        for(int i =0; i < jeu.length; i++)
+        {
+            jeu[i] = new Quille();
+        }
         rand = new Random();
         strike = false;
         spare = false;
@@ -25,17 +29,19 @@ public class Piste
 
     private void reset()
     {
-        for(int i =0; i < 10; i++)
+        for(int i =0; i < jeu.length; i++)
         {
             jeu[i].setFallen(false);
         }
+        strike = false;
+        spare = false;
     }
 
     private int score()
     {
         int cpt = 0;
 
-        for(int i =0; i < 10; i++)
+        for(int i =0; i < jeu.length; i++)
         {
             if(jeu[i].isFallen())
                 cpt ++;
@@ -46,7 +52,7 @@ public class Piste
 
     private void lancer()
     {
-        for(int i =0; i < 10; i++)
+        for(int i =0; i < jeu.length; i++)
         {
             jeu[i].setFallen(rand.nextBoolean());
         }
@@ -60,7 +66,7 @@ public class Piste
 
     private void lancer2()
     {
-        for(int i =0; i < 10; i++)
+        for(int i =0; i < jeu.length; i++)
         {
             if(!jeu[i].isFallen())
                 jeu[i].setFallen(rand.nextBoolean());
@@ -94,7 +100,9 @@ public class Piste
         lancer();
         if(strike == false)
             lancer2();
-        return score();
+
+        int tmp = score();
+        return tmp;
     }
 
 }

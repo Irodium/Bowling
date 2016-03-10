@@ -13,6 +13,7 @@ public class App
 
         j.jouer(p);
         System.out.println(j.compter());
+        System.out.println(j.resultat());
 
     }
 }

@@ -57,7 +57,7 @@ public class Joueur
     {
         int cpt = 0;
 
-        for(int i =0; i<12; i++)
+        for(int i =0; i<tabstrsp.length; i++)
         {
             if(tabstrsp[i]==1)
             {
@@ -69,10 +69,25 @@ public class Joueur
                 cpt += tab[i];
                 cpt += tab[i+1];
                 cpt += tab[i+2];
-
+            }
+            else
+            {
+                cpt += tab[i];
             }
         }
 
         return cpt;
+    }
+
+    public String resultat()
+    {
+        String res = new String("");
+
+        for(int i =0; i<tab.length; i++)
+        {
+            res += tab[i] + " / ";
+        }
+
+        return res;
     }
 }
