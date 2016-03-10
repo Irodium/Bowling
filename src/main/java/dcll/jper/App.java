@@ -1,19 +1,19 @@
 package dcll.jper;
 
+import java.util.Scanner;
 
-import dcll.jper.Joueur;
-import dcll.jper.Piste;
-
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
-        Joueur j = new Joueur();
-        Piste p = new Piste();
 
-        j.jouer(p);
-        System.out.println(j.compter());
-        System.out.println(j.resultat());
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Veuillez entrer la séquence de lancés.");
+
+        String str = scan.nextLine();
+        System.out.println("Vous avez saisi : " + str);
+
+
 
     }
 }
